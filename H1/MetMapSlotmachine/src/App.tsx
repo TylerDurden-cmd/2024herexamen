@@ -23,7 +23,7 @@ const App = () => {
         Math.floor(Math.random() * slotsImages.length)])
     }
 
-    let trueFalse: boolean = rndNumbers.every((number) => number === rndNumbers[0]);
+    const trueFalse: boolean = rndNumbers.every((number) => number === rndNumbers[0]);
 
   return (
   <>
@@ -31,8 +31,8 @@ const App = () => {
   <img src={slots} alt="" key={index} style={{width: 150}}/>
 )}
 {trueFalse == true ? <p>Je hebt gewonnen</p> : <p>Je hebt verloren</p>}
-{rndNumbers.map((slot:number,index:number)=>
-<img src={slotsImages[slot]} alt="" style={{width: 150}}/>
+{rndNumbers.map((slot:number, index:number)=>
+<img src={slotsImages[slot]} alt="" style={{width: 150}} key={index}/>
 )}
 
 <input type="button" value="spin the wheel" onClick={() => RndGenerator()}/>
